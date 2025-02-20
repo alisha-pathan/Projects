@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * img {
+            width: 100%;
+        }
+
+        .container .row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .container .col {
+            border-radius: 10px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 3px 5px -1px, rgba(0, 0, 0, 0.3) 0px 2px 5px 1px;
+            padding: 5px 0 0;
+            box-sizing: content-box;
+            width: 450px;
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            border-bottom: 2px solid black;
+
+        }
+
+        .col h3 {
+            margin: 1rem 20px 0;
+        }
+
+        .col .member {
+            width: 110px;
+            border-radius: 50%;
+            overflow: hidden;
+            padding: 5px 10px;
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            background-color: #e3f5fa;
+            z-index: 1;
+        }
+
+        .col .triangle {
+            width: 500px;
+            height: 500px;
+            transform: translateX(130px) translateY(53px) rotate(60deg);
+            background-color: #e3f5faae;
+        }
+
+        .col .triangle:hover {
+            background-color: #052c65;
+        }
+
+        .col .tshirt {
+            width: 130px;
+            position: absolute;
+            bottom: 29px;
+            left: 2rem;
+        }
+
+        .tshirt::after {
+            content: "18";
+            position: absolute;
+            top: 30px;
+            left: 47px;
+            font-size: 26px;
+            color: #ffc107;
+        }
+
+        .col .des2 {
+            position: absolute;
+            bottom: -10px;
+            width: 45px;
+        }
+
+        .col .subCon {
+            position: absolute;
+            bottom: 20px;
+            left: 24px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .col .subRow {
+            background-color: #cff4fc;
+            display: grid;
+            grid-template-columns: 2fr 2fr 2fr;
+            width: 400px;
+            padding: 10px 5px;
+        }
+
+        .col .subCol {
+            /* border: 2px solid black; */
+            text-align: center;
+            display: grid;
+            place-items: center;
+            font-size: 15px;
+            border-right: 2px solid rgba(0, 0, 0, 0.24);
+
+        }
+
+        .subCol .bat {
+            width: 20px;
+        }
+
+        .subCol p:first-child {
+            color: rgba(0, 0, 0, 0.678);
+            margin-bottom: 8px;
+        }
+
+        .subCol p:nth-child(2) {
+            font-weight: bold;
+        }
+
+        .subRow .subCol:nth-child(3) {
+            border-right: 2px solid transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+
+            <div class="col">
+
+                <h3>Virat Kohli</h3>
+                <div class="member">
+                    <img src="./images/virat.png" alt="virat">
+                </div>
+                <div class="tshirt">
+                    <img src="./images/india-tshirt.svg" alt="tshirt">
+                </div>
+                <div class="des2">
+                    <img src="./images/player-blue-bg.svg" alt="des">
+                </div>
+
+                <div class="triangle"></div>
+
+
+                <div class="subCon">
+                    <div class="subRow">
+                        <div class="subCol">
+
+                            <div class="bat"><img src="./images/bat.svg" alt="bat"></div>
+                            <p>Batter</p>
+
+
+                        </div>
+                        <div class="subCol">
+
+                            <p>Age</p>
+                            <p>36</p>
+
+                        </div>
+                        <div class="subCol">
+
+                            <p>Style</p>
+                            <p>RHB</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .TeamContainer {
+            width: 100%;
+            padding: 2px;
+            padding: 2rem;
+        }
+
+        .TeamRow {
+            width: 100%;
+            display: grid;
+            gap: 10px;
+            grid-template-columns: 3fr 3fr;
+        }
+
+        .TeamCol {
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: 1px 1px 3px black;
+            padding: 10px;
+        }
+
+        .TeamCol:hover {
+            transform: translateY(-2px) scale(1.01);
+            transition: 0.1s all ease;
+            box-shadow: 1px 1px 10px black;
+
+        }
+
+        .teamSub-Row .teamSub-Col {
+            display: grid;
+            grid-template-columns: 1fr 5fr;
+            gap: 10px;
+
+        }
+
+        .teamSub-Col .logo {
+            background-color: antiquewhite;
+            overflow: hidden;
+            box-shadow: 1px 1px 3px black;
+            border-radius: 10px;
+            display: grid;
+            grid-template-rows: 1fr;
+            place-items: center;
+        }
+
+        .teamSub-Col .logo:hover {
+            transform: translateY(-2px) scale(1.01);
+            transition: 0.1s all ease-in;
+            box-shadow: 1px 1px 10px black;
+
+        }
+
+        .teamSub-Col .TeamData {
+            padding: 1rem;
+        }
+
+        .TeamData .TeamName {
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 3px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="TeamContainer">
+        <div class="TeamRow">
+
+        </div>
+    </div>
+    </div>
+
+
+    <script>
+        const Team_Row = document.querySelector('.TeamRow');
+        console.log(Team_Row);
+
+        let TeamCol;
+        let TeamData = [
+            {
+                Tname: "Hyderabad Heroes",
+                Tlog: "./images/titansLogo.png",
+                content: "A powerhouse of skilled players, known for their aggressive batting and sharp fielding."
+            },
+            {
+                Tname: "Chennai Kings",
+                Tlog: "./images/titansLogo.png",
+                content: "Dominating the cricket world with their strategic play and unbeatable all-rounders."
+            },
+            {
+                Tname: "Mumbai Titans",
+                Tlog: "./images/titansLogo.png",
+                content: "A fearless squad with a legacy of thrilling victories and last-over heroics."
+            },
+            {
+                Tname: "Kolkata Warriors",
+                Tlog: "./images/titansLogo.png",
+                content: "An unbreakable team with a perfect blend of young talent and experienced players."
+            },
+            {
+                Tname: "Bangalore Blazers",
+                Tlog: "./images/titansLogo.png",
+                content: "Setting the field on fire with their explosive batting and pace attack."
+            },
+            {
+                Tname: "Punjab Panthers",
+                Tlog: "./images/titansLogo.png",
+                content: "Fierce and relentless, this team is known for its unpredictable game-changing moments."
+            },
+            {
+                Tname: "Rajasthan Royals",
+                Tlog: "./images/titansLogo.png",
+                content: "A royal squad with a history of discovering new cricketing talents every season."
+            },
+            {
+                Tname: "Delhi Dynamos",
+                Tlog: "./images/titansLogo.png",
+                content: "Dominating the league with their strong teamwork and innovative strategies."
+            },
+            {
+                Tname: "Lucknow Strikers",
+                Tlog: "./images/titansLogo.png",
+                content: "A rising force with dynamic players known for their fearless gameplay."
+            },
+            {
+                Tname: "Gujarat Gladiators",
+                Tlog: "./images/titansLogo.png",
+                content: "A team built on resilience and strength, delivering outstanding performances."
+            }
+        ];
+
+
+        console.log(TeamData);
+
+        TeamData.forEach((val, i) => {
+            TeamCol = document.createElement('div');
+            TeamCol.setAttribute("class", 'TeamCol');
+
+            TeamCol.innerHTML = `
+                    <div class="teamSub-Row">
+
+                        <div class="teamSub-Col">
+                            <div class="logo"><img src="${val.Tlog}" alt="logo" width="100%"></div>
+
+                            <div class="TeamData">
+                                <div class="TeamName">${val.Tname}</div>
+                                <div class="Team-description">${val.content}</div>
+                            </div>
+                        </div>
+
+                    </div>
+                `;
+            TeamCol.addEventListener('click', () => {
+                window.location.href = `team.html?teamId=${i}`;
+            });
+            Team_Row.appendChild(TeamCol);
+
+        });
+
+
+    </script>
+</body>
+
+</html>
