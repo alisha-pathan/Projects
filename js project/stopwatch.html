@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25px;
+            text-transform: capitalize;
+        }
+
+        .container {
+            margin-top: 40vh;
+        }
+
+        .row,
+        .align {
+            display: flex;
+            width: 500px;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .col {
+            flex-basis: 200px;
+            flex-grow: 1;
+            height: 50px;
+            padding: 8px 0;
+            border: 2px solid black;
+            margin: 10px;
+            border-radius: 50px;
+            box-shadow: 0 2px 5px black;
+
+        }
+
+        .align * {
+            border: 2px solid black;
+            flex-basis: 150px;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 5px;
+        }
+
+        .align *:hover {
+            background-color: rgb(113, 150, 59);
+            transform: scale(1.02);
+            box-shadow: 0 2px 5px black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col hr">00</div>
+            <div class="col min ">00</div>
+            <div class="col sec">00</div>
+        </div>
+
+        <div class="align">
+            <button class="start">start</button>
+            <button class="pause">pause</button>
+            <button class="reset">reset</button>
+        </div>
+    </div>
+    <script>
+        let start = document.querySelector('.start');
+        let reset = document.querySelector('.start');
+        let pause = document.querySelector('.pause');
+
+        let hr= document.querySelector('.hr');
+        let min= document.querySelector('.min');
+        let sec= document.querySelector('.sec');
+
+        let s = 0 ,m = 0 ,h = 0, i ;
+        start.addEventListener('click',()=>{
+            // if(!i){
+                i = setInterval(()=>{
+                    s++;
+                    if(s == 60){
+                        s = 0;
+                        m++;
+                    }
+                    if(m == 60){
+                        m = 0;
+                        h++;
+                    }
+                    display()
+                },1000);
+
+              
+            // }
+        })
+
+        function display(){
+            hr.innerHTML =  String(h).padStart(2, "0");; 
+            min.innerHTML =  String(m).padStart(2, "0");; 
+            // sec.innerHTML = s;
+            sec.innerHTML = String(s).padStart(2, "0");
+        }
+    </script>
+    
+</body>
+
+</html>
