@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor</title>
+    <style>
+    
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #cbcbeb;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        #c1 {
+            border: 2px solid #333;
+            border-radius: 15px;
+            display: flex;
+            padding: 20px;
+            margin: auto;
+            width: 800px;
+            justify-content: space-between;
+            background-color: #09cb8e;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .c {
+            width: 200px;
+            text-align: center;
+        }
+
+        .c p {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .c img {
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .c img:hover {
+            transform: scale(1.1);
+        }
+
+        #btn {
+            width: 500px;
+            margin: 10px auto;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #btn button {
+            width: 120px;
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            text-transform: capitalize;
+            border-radius: 5px;
+            background-color: #eff702;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 1px 2px 3px black;
+        }
+
+        #btn button:hover {
+            background-color: #f0b504;
+            transform: translateY(-2px);
+        }
+
+        #winner {
+            text-align: center;
+            font-size: 25px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            #c1 {
+                width: 90%;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .c {
+                margin-bottom: 20px;
+            }
+
+            #btn {
+                width: 90%;
+            }
+
+            #btn button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="c1">
+        <div class="c">
+            <p>Computer</p>
+            <img src="https://i.pinimg.com/originals/70/db/7f/70db7f353a08336cb20b9c9acde7b8fb.gif" alt="hand"
+                width=100% id="ch">
+        </div>
+        <div class="c">
+            <p>User</p>
+            <img src="https://studio.code.org/v3/assets/qqwiaTfQTMGCuvBaC2T_oJ-V58bOosr_9e7rPvghquQ/rock.gif" alt="hand"
+                width=100% id="uh">
+        </div>
+    </div>
+
+    <div id="btn">
+        <button onclick="playGame('rock')">rock</button>
+        <button onclick="playGame('paper')">paper</button>
+        <button onclick="playGame('scissor')">scissor</button>
+    </div>
+
+    <p id="winner"></p>
+    <script src="./Js/rockgame.js"></script>
+</body>
+
+</html>
